@@ -1,0 +1,264 @@
+{
+  // VScode主题配置
+  "editor.tabSize": 2,
+  "editor.lineHeight": 24,
+  "editor.renderLineHighlight": "none",
+  "editor.renderWhitespace": "none",
+  "editor.fontFamily": "Consolas",
+  "editor.fontSize": 15,
+  "editor.cursorBlinking": "smooth",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.wordWrap": "off", // 永不换行
+  "editor.wordWrapColumn": 400,
+  "editor.renameOnType": true,
+  "explorer.confirmDelete": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Dracula Soft",
+  "workbench.colorCustomizations": {
+    "editorIndentGuide.activeBackground": "#ff0000" // 设置guide线高亮颜色,可以改为自己喜欢的颜色
+  },
+  "editor.snippetSuggestions": "top", // 代码提示。许多插件都有代码提示，代码缩写提示优先显示在最上方
+  // 代码提示选中哪一项。coding时，VScode会给出很多提示，在所有的提示选项中会默认选中一个，这一配置就是表示默认选中哪一项。
+  // 此项配置十分精妙，自己改改探索一下。
+  // "first"，表示VScode将总是选中第一项
+  // "recentlyUsed" （默认值）表示vs code将从代码提示中，预先选中最近使用过的项，
+  // "recentlyUsedByPrefix" （推介）表示vs code将从代码提示中，预先选中最近使用过的项，
+  "editor.suggestSelection": "first",
+  "editor.quickSuggestions": {
+    // 是否显示可能用到的示例代码.安装插件过多，建议选项也会非常多
+    "other": true,
+    "comments": true,
+    "strings": false
+  },
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  // css2rem插件: 书写css时，px单位自动提示转换为rem单位
+  // 此处根字体大小设置为100（默认为16）
+  "cssrem.rootFontSize": 100,
+  // 设置终端的命令工具，比如我用到了 cmder，那么可以把这里的地址改为电脑cmder的安装位置
+  // 推介终端启动快捷键:  ctrl + shift + C
+  "terminal.integrated.shell.windows": "C:\\windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "workbench.editor.limit.enabled": true, // 是否限制每一个VSCODE窗体内显示的编辑器窗体数量（默认为关闭）。
+  "workbench.editor.limit.perEditorGroup": true, // 是对打开的所有VSCODE窗体进行限制还是只对当前VSCODE窗体限制
+  "workbench.editor.limit.value": 8, // 打开的编辑器的最大数量（默认为10个）
+  "javascript.updateImportsOnFileMove.enabled": "always", // 移动文件或者修改文件名时，是否自动更新引用到自此文件的所有文件。
+  "javascript.implicitProjectConfig.experimentalDecorators": true, // 实验性配置。对于非js文件，是否自动启用一份默认的ts配置
+  "[json]": {
+    // 对json文件，使用 JSON语言功能 进行格式化
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[html]": {
+    // 对html文件，使用 vscode.html-language-features(vscode内置规则) 进行格式化,不要使用 prettier
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    // 可选值： eslint ："dbaeumer.vscode-eslint"  vetur: "octref.vetur"   prettier: "esbenp.prettier-vscode"
+    // 对 vue 文件，使用 prettier（格式化规则） + eslint（校验） 进行格式化，也可以选择 vetur 插件，或者单独选择prettier不加eslint
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "[markdown]": {
+    // 对md文件，使用 Prettier 进行格式化
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    // 对ts文件进行格式化时，使用哪一种风格 (此处使用的是vscode中安装的ts插件默认风格进行格式化)
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "breadcrumbs.enabled": true, // 启用/禁用顶部面包屑导航（可以直接跳转文件）
+  "open-in-browser.default": "chrome", // 配置打开html文件的默认浏览器
+  "search.exclude": {
+    // VScode进行文件搜索时，不搜索这些区域。
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.gitignore": true,
+    "**/.idea": true,
+    "**/.svn": true,
+    "**/.vscode": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/tmp": true,
+    "**/yarn.lock": true,
+    "**/assets": true,
+    "**/public": true
+  },
+  // 配置是否在左侧目录列表中显示
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+  },
+  // 配置文件关联
+  "files.associations": {
+    // 比如小程序中的 .wxss 这种文件，会把它作为css文件来处理，提供对应的css的语法提示，css的格式化等。
+    "*.wxss": "css",
+    "*.cjson": "jsonc",
+    "*.wxs": "javascript",
+    "*.ts": "typescript",
+    "*.vue": "vue",
+    "*.dart": "dart"
+  },
+  // vscode已经内置了emmet。配置emmet是否启用tab展开缩写
+  // 这一设置最大作用是：当输入的文本不属于Emmet定义的缩写规则时，依然允许使用Tab键进行缩进。此时会提示我自定义的缩写语句，以及各插件自定义的缩写语句.
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showSuggestionsAsSnippets": true, // 是否将自定义的代码片段作为提示建议显示。
+  "emmet.syntaxProfiles": {
+    // 配置emmet对文件的支持
+    "vue-html": "html",
+    "vue": "html",
+    "javascript": "javascriptreact",
+    "xml": {
+      "attr_quotes": "double"
+    }
+  },
+  "emmet.includeLanguages": {
+    "wxml": "html",
+    "vue-html": "html",
+    "javascript": "javascriptreact",
+    "jsx-sublime-babel-tags": "javascriptreact", // 在 react 的jsx中添加对emmet的支持
+  },
+  // 粘贴后的内容, 是否自动格式化
+  "editor.formatOnPaste": false,
+  // ===================格式化文件================
+  // 格式化快捷键: shirt + alt + F   删除代码中无用的文件引用: shift + alt + o
+  // 使用 shirt + alt + F 进行格式化时，先执行编辑器的格式化规则，然后执行 eslint 和 tslint 等其他插件格式化规则。
+  // prettier 格式化规则
+  // "prettier.useTabs": true, // 一个tab的宽度
+  // "prettier.tabWidth": 2, // 一个tab的宽度
+  // "prettier.singleQuote": false, // 是否使用单引号
+  // "prettier.semi": true, // 句末封号
+  // "prettier.insertPragma": false,
+  // "prettier.trailingComma": "none",
+  // "prettier.arrowParens": "always",
+  "editor.codeActionsOnSave": {
+    "source.organizeImport": true,
+    "source.fixAll": false, // 对所有文件，保存时自动格式化
+    "source.fixAll.eslint": false, // 更细. 在文件保存时，禁用eslint规则生效。此配置会影响 eslint.format.enable
+    "source.fixAll.tslint": false, // 更细. 在文件保存时，禁用tslint规则生效。 此配置会影响 typescript.validate.enable
+    "source.fixAll.stylelint": false // 更细. 在文件保存时，禁用stylelint样式规则生效
+  },
+  // 是否开启 typescript 代码规范检测 (与后面的 eslint 选择开启一种即可)
+  "typescript.validate.enable": false, // 是否开启 tslint代码规范检测
+  // 是否开启 eslint代码规范检测
+  // 保存文件时，让prettier使用eslint的代码格式进行自动格式化文件
+  // 注意：
+  // 如果此条规则开启，那么 
+  // editor.codeActionsOnSave 应该设置为 
+  // { 
+  //  source.fixAll:false,
+  //  "source.fixAll.eslint": true
+  // }
+  "eslint.format.enable": false, // 是否 根据自己配置的 eslint配置文件, 对代码进行格式化
+  "eslint.options": {
+    // eslint配置文件 ,修改为你自己电脑上的文件位置，或者直接删除
+    // "configFile": "D:/worksapce/vue-project/.eslintrc.js",
+    "plugins": [
+      "html"
+    ]
+  },
+  "eslint.validate": [
+    // eslint规则对以下几种后缀文件生效. 默认为["javascript", "javascriptreact"]
+    "javascript",
+    "javascriptreact",
+    "html",
+    "typescript",
+    "typescriptreact"
+  ],
+  "git.autofetch": true, // 在push代码时，是否先自动从远端拉取代码
+  "gitlens.advanced.messages": {
+    // 配置gitlen中git提交历史记录的信息显示情况
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": false,
+    "suppressShowKeyBindingsNotice": true,
+    "suppressUpdateNotice": true,
+    "suppressWelcomeNotice": false
+  },
+  "debug.openDebug": "openOnDebugBreak", // 断点调试时，遇到断点，自动显示调试视图。（全局，不可为每种语言单独配置）
+  /// **python开发专用配置** 是否格式化python文件
+  "python.linting.enabled": false,
+  "minapp-vscode.disableAutoConfig": true,
+  /// **apicloud开发专用配置** 设置端口。开启apicloud在vscode中的wifi真机同步
+  "apicloud.port": "23450",
+  "apicloud.subdirectories": "/apicloudproject", // 设置apicloud在vscode中的wifi真机同步根目录，默认可不设置
+  /// **dart语言专用配置**
+  "dart.warnWhenEditingFilesOutsideWorkspace": true,
+  "dart.openDevTools": "flutter",
+  "dart.enableCompletionCommitCharacters": true,
+  "dart.flutterHotRestartOnSave": true,
+  "dart.lineLength": 120,
+  "dart.previewFlutterUiGuides": true,
+  "dart.triggerSignatureHelpAutomatically": true,
+  "dart.debugExternalLibraries": true,
+  "dart.debugSdkLibraries": true,
+  "[dart]": {
+    // 保存文件时，是否自动格式化代码，
+    "editor.formatOnSave": true,
+    // 当你输入特定字符时，是否自动格式化代码，(比如输入 `;` 和 `}`).
+    "editor.formatOnType": true,
+    // 在80个字符处画一条引导线，这个范围内的dart代码将被格式化。
+    "editor.rulers": [
+      80
+    ],
+    // 禁用与所选内容匹配的单词的内置突出显示。如果不这样做，所选文本的所有实例都将突出显示，从而影响Dart突出显示所选变量的精确引用的能力。
+    "editor.selectionHighlight": false,
+    // 默认情况下，当处于“代码片段模式”（在插入的代码中编辑占位符）时，VS会防止snippets弹出打开。
+    // 如果设置为“false”，则表示允许完成操作打开，就像不在代码段占位符中
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "editor.suggestSelection": "recentlyUsedByPrefix",
+    // 允许使用按<tab>速写代码片段，例如，输入“for”时，即使完成列表不可见。
+    "editor.tabCompletion": "onlySnippets",
+    // 默认情况下，当前的语言没有代码片段提示时，VS Code将使用当前文件中的你自己写过的单词来显示代码片段提示。
+    // 这导致代码完成在编辑注释和字符串时建议单词。 此设置将阻止这种情况
+    // 对于dart来说最好关闭，对于html和css建议开启
+    "editor.wordBasedSuggestions": false,
+    // 在文件底部添加新代码行时，强制所有文件都有一行空格。
+    "files.insertFinalNewline": true
+  },
+  "dart.checkForSdkUpdates": false,
+  /// **java语言专用配置**
+  // 由于我本机java版本为 1.8 ,vscode内置的vscode-java依赖于openJDK 并且版本大于等于 11，所以总是会弹出一个报错窗口。
+  // https://github.com/redhat-developer/vscode-java/wiki/JDK-Requirements#java.configuration.runtimes，解决办法如下
+  // 1. 下载 openJDK11 并安装，下载地址：https://adoptopenjdk.net/
+  // 2. 配置 java.home 为刚刚安装的 openJDK11 的位置
+  // 3. 由于我还只希望在Vcode中使用JDK11版本，其余配置不变，所以配置 java.configuration.runtimes
+  "java.home": "C:/Program Files/JavaAdoptOpenJDK/jdk-11.0.8.10-hotspot",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-1.8",
+      "path": "C:/Program Files/Java/jdk1.8.0_211",
+    },
+    {
+      "name": "JavaSE-11",
+      "path": "C:/Program Files/JavaAdoptOpenJDK/jdk-11.0.8.10-hotspot",
+      "default": true
+    },
+  ],
+  "versionlens.suggestions.showPrereleasesOnStartup": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+}
