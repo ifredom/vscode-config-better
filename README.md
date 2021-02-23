@@ -18,3 +18,14 @@
   },
   "vetur.format.defaultFormatter.js": "vscode-typescript",
 ```
+
+## Delete `␍`eslint(prettier/prettier) 错误的解决办法
+
+项目根目录下创建文件`.prettierrc`,然后重启vscode
+
+```json
+{
+  "endOfLine": "auto"
+}
+
+```
