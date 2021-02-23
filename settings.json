@@ -10,7 +10,7 @@
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.wordWrap": "off", // 永不换行
   "editor.wordWrapColumn": 400,
-  "editor.renameOnType": true,
+  "editor.linkedEditing": true,
   "explorer.confirmDelete": false,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.iconTheme": "material-icon-theme",
@@ -33,7 +33,7 @@
   },
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   // css2rem插件: 书写css时，px单位自动提示转换为rem单位
-  // 此处根字体大小设置为100（默认为16）
+  // 此处根字体大小设置为100（默认为16）, 注意与你项目中rem数值保持一致
   "cssrem.rootFontSize": 100,
   // 设置终端的命令工具，比如我用到了 cmder，那么可以把这里的地址改为电脑cmder的安装位置
   // 推介终端启动快捷键:  ctrl + shift + C
@@ -42,7 +42,6 @@
   "workbench.editor.limit.perEditorGroup": true, // 是对打开的所有VSCODE窗体进行限制还是只对当前VSCODE窗体限制
   "workbench.editor.limit.value": 8, // 打开的编辑器的最大数量（默认为10个）
   "javascript.updateImportsOnFileMove.enabled": "always", // 移动文件或者修改文件名时，是否自动更新引用到自此文件的所有文件。
-  "javascript.implicitProjectConfig.experimentalDecorators": true, // 实验性配置。对于非js文件，是否自动启用一份默认的ts配置
   "[json]": {
     // 对json文件，使用 JSON语言功能 进行格式化
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -67,11 +66,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
-    // "editor.defaultFormatter": "esbenp.prettier-vscode"
-    // "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     // 可选值： eslint ："dbaeumer.vscode-eslint"  vetur: "octref.vetur"   prettier: "esbenp.prettier-vscode"
     // 对 vue 文件，使用 prettier（格式化规则） + eslint（校验） 进行格式化，也可以选择 vetur 插件，或者单独选择prettier不加eslint
-    "editor.defaultFormatter": "octref.vetur"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
     // 对md文件，使用 Prettier 进行格式化
@@ -98,8 +95,7 @@
     "**/dist": true,
     "**/tmp": true,
     "**/yarn.lock": true,
-    "**/assets": true,
-    "**/public": true
+    "**/assets": true
   },
   // 配置是否在左侧目录列表中显示
   "files.exclude": {
@@ -143,8 +139,7 @@
   // ===================格式化文件================
   // 格式化快捷键: shirt + alt + F   删除代码中无用的文件引用: shift + alt + o
   // 使用 shirt + alt + F 进行格式化时，先执行编辑器的格式化规则，然后执行 eslint 和 tslint 等其他插件格式化规则。
-  // prettier 格式化规则
-  // "prettier.useTabs": true, // 一个tab的宽度
+  // prettier 可用格式化规则配置
   // "prettier.tabWidth": 2, // 一个tab的宽度
   // "prettier.singleQuote": false, // 是否使用单引号
   // "prettier.semi": true, // 句末封号
@@ -154,24 +149,23 @@
   "editor.codeActionsOnSave": {
     "source.organizeImport": true,
     "source.fixAll": false, // 对所有文件，保存时自动格式化
-    "source.fixAll.eslint": false, // 更细. 在文件保存时，禁用eslint规则生效。此配置会影响 eslint.format.enable
+    "source.fixAll.eslint": true, // 更细. 在文件保存时，禁用eslint规则生效。此配置会影响 eslint.format.enable
     "source.fixAll.tslint": false, // 更细. 在文件保存时，禁用tslint规则生效。 此配置会影响 typescript.validate.enable
     "source.fixAll.stylelint": false // 更细. 在文件保存时，禁用stylelint样式规则生效
   },
-  // 是否开启 typescript 代码规范检测 (与后面的 eslint 选择开启一种即可)
-  "typescript.validate.enable": false, // 是否开启 tslint代码规范检测
-  // 是否开启 eslint代码规范检测
-  // 保存文件时，让prettier使用eslint的代码格式进行自动格式化文件
-  // 注意：
-  // 如果此条规则开启，那么 
+  // 是否开启 tslint代码规范检测 (与eslint 选择开启一种即可)
+  "typescript.validate.enable": false,
+  // 保存文件时，如果使用的是prettier进行格式化，并且要求prettier使用自定义的eslint规则对代码进行自动格式化
+  // 那么 
   // editor.codeActionsOnSave 应该设置为 
   // { 
   //  source.fixAll:false,
   //  "source.fixAll.eslint": true
   // }
-  "eslint.format.enable": false, // 是否 根据自己配置的 eslint配置文件, 对代码进行格式化
+  "eslint.format.enable": true, 
   "eslint.options": {
     // eslint配置文件 ,修改为你自己电脑上的文件位置，或者直接删除
+    // 建议专门创建一个配置文件.eslintrc.js放在指定位置，所有项目均使用此配置文件，避免每一个项目都创建一个
     // "configFile": "D:/worksapce/vue-project/.eslintrc.js",
     "plugins": [
       "html"
@@ -186,6 +180,7 @@
     "typescriptreact"
   ],
   "git.autofetch": true, // 在push代码时，是否先自动从远端拉取代码
+  "git.enableSmartCommit": true,
   "gitlens.advanced.messages": {
     // 配置gitlen中git提交历史记录的信息显示情况
     "suppressCommitHasNoPreviousCommitWarning": false,
@@ -193,11 +188,7 @@
     "suppressFileNotUnderSourceControlWarning": false,
     "suppressGitVersionWarning": false,
     "suppressLineUncommittedWarning": false,
-    "suppressNoRepositoryWarning": false,
-    "suppressResultsExplorerNotice": false,
-    "suppressShowKeyBindingsNotice": true,
-    "suppressUpdateNotice": true,
-    "suppressWelcomeNotice": false
+    "suppressNoRepositoryWarning": false
   },
   "debug.openDebug": "openOnDebugBreak", // 断点调试时，遇到断点，自动显示调试视图。（全局，不可为每种语言单独配置）
   /// **python开发专用配置** 是否格式化python文件
@@ -207,6 +198,8 @@
   "apicloud.port": "23450",
   "apicloud.subdirectories": "/apicloudproject", // 设置apicloud在vscode中的wifi真机同步根目录，默认可不设置
   /// **dart语言专用配置**
+  "dart.checkForSdkUpdates": false,
+  "dart.previewLsp": true,
   "dart.warnWhenEditingFilesOutsideWorkspace": true,
   "dart.openDevTools": "flutter",
   "dart.enableCompletionCommitCharacters": true,
@@ -240,9 +233,8 @@
     // 在文件底部添加新代码行时，强制所有文件都有一行空格。
     "files.insertFinalNewline": true
   },
-  "dart.checkForSdkUpdates": false,
   /// **java语言专用配置**
-  // 由于我本机java版本为 1.8 ,vscode内置的vscode-java依赖于openJDK 并且版本大于等于 11，所以总是会弹出一个报错窗口。
+   // 由于我本机java版本为 1.8 ,vscode内置的vscode-java依赖于openJDK 并且版本大于等于 11，所以总是会弹出一个报错窗口。
   // https://github.com/redhat-developer/vscode-java/wiki/JDK-Requirements#java.configuration.runtimes，解决办法如下
   // 1. 下载 openJDK11 并安装，下载地址：https://adoptopenjdk.net/
   // 2. 配置 java.home 为刚刚安装的 openJDK11 的位置
@@ -259,6 +251,8 @@
       "default": true
     },
   ],
+  "commentTranslate.multiLineMerge": true,
+  "commentTranslate.concise": true,
   "versionlens.suggestions.showPrereleasesOnStartup": true,
   "liveServer.settings.donotShowInfoMsg": true,
 }
