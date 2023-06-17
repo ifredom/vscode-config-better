@@ -1,7 +1,7 @@
 {
   // VScode主题配置
   "workbench.iconTheme": "file-icons",
-  "workbench.colorTheme": "Default Light+",
+  "workbench.colorTheme": "Dracula Soft",
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 5, // 打开的编辑器的最大数量（默认为10，超出数量会自动关闭）
@@ -55,18 +55,15 @@
   },
   // 粘贴后的内容, 是否对此粘贴内容进行格式化
   "editor.formatOnPaste": true,
-  /// if => 关闭编辑器自带保存格式化功能，此功能会用Vetur进行格式化
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     // 自动对 import 这种符合CommonJS规范语句进行排序，
     // 要使此功能生效，要求使用到星号的语句写在当前文件顶部，例如：import * as Some from "R"
     "source.organizeImport": true,
     // 自动引入缺少的库
     "source.addMissingImports": false,
-    "source.fixAll.eslint": true,
     "source.organizeImports": false,
-    /// else =>
-    "source.fixAll": false // 对所有文件，保存时自动格式化
+    "source.fixAll": true // 对所有文件，保存时自动格式化
     // "source.fixAll.eslint": false, // 更细. 在文件保存时，eslint规则生效。此配置会影响 eslint.format.enable
     // "source.fixAll.tslint": false, // 更细. 在文件保存时，tslint规则生效。 此配置会影响 typescript.validate.enable
     // "source.fixAll.stylelint": false // 更细. 在文件保存时，stylelint样式规则生效
@@ -223,13 +220,13 @@
     "json5"
   ],
   "css.lint.hexColorLength": "ignore",
-  "git.autofetch": true, // 在push代码时，是否先自动从远端拉取代码
+  // 在push代码时，是否先自动从远端拉取代码
+  "git.autofetch": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "git.untrackedChanges": "separate",
   "git.ignoreRebaseWarning": true,
   "gitlens.advanced.messages": {
-    // 配置gitlen中git提交历史记录的信息显示情况
     "suppressCommitHasNoPreviousCommitWarning": false,
     "suppressCommitNotFoundWarning": false,
     "suppressFileNotUnderSourceControlWarning": false,
@@ -352,7 +349,6 @@
   },
   "vscode-edge-devtools.webhint": false,
   "settingsSync.ignoredExtensions": [],
-  "files.autoSave": "afterDelay",
   "javascript.preferences.autoImportFileExcludePatterns": [
     "@vue/runtime-core",
     "@vue/runtime-dom"
